@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.ant-layout-header {
+  background: white;
+}
+
+.ant-layout .ant-layout {
+  text-align: left;
+}
+
+.ant-layout {
+  background: white;
+}
