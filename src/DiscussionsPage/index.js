@@ -38,13 +38,11 @@ export class DiscussionPage extends React.Component {
         }],
     };
 
-    onSearch = (value) => {
-        console.log("value", value)
-        this.setState({filterStr: value});
+    onSearchFieldChange = (value) => {
+        this.setState({filterStr: value.target.value});
     };
 
     filter = (discussions, filterStr) => {
-        console.log(discussions, filterStr);
         if (!discussions || !Array.isArray(discussions)) {
             return [];
         }
@@ -62,14 +60,13 @@ export class DiscussionPage extends React.Component {
 
     render() {
         const {filterStr, discussions} = this.state;
-        console.log("filterStr", filterStr)
         const filteredDiscussions = this.filter(discussions, filterStr);
         return (<Layout>
             <Header>
                 <Search
                     size="large"
                     placeholder="Keresés..."
-                    onSearch={this.onSearch}
+                    onChange={this.onSearchFieldChange}
                     style={{width: 600}}/>
             </Header>
             <Layout>
